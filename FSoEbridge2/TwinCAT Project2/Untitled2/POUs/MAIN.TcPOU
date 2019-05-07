@@ -5,7 +5,7 @@
 VAR
 	mErrACK AT %Q*	: BOOL;
 	mRun AT %Q*		: BOOL;
-	iInt AT %I*		: INT;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>

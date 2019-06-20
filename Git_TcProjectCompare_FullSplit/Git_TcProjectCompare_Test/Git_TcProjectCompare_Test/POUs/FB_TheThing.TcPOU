@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_TheThing" Id="{ae585d05-c753-4c3e-90dd-c6220bf5bb9e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TheThing
+VAR_INPUT
+	input	: REAL;
+END_VAR
+VAR_OUTPUT
+	output	: REAL;
+END_VAR
+VAR
+
+	prepared			: BOOL := FALSE;
+	succeeded			: BOOL := FALSE;
+	
+	preparation_timer	: TON;
+	
+	offset				: REAL := 0;
+	testAdd				: BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+prepared := prepare_to_do_the_thing();
+
+succeeded := do_the_thing();
+
+]]></ST>
+    </Implementation>
+    <Method Name="do_the_thing" Id="{407deb4a-f778-4693-9eec-d23695a1fdb0}">
+      <Declaration><![CDATA[METHOD do_the_thing : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.output := SEL(THIS^.prepared, 0, input - THIS^.offset);
+
+do_the_thing := THIS^.prepared;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="prepare_to_do_the_thing" Id="{c175b9c6-84df-458d-abed-deba4a8f659f}">
+      <Declaration><![CDATA[METHOD prepare_to_do_the_thing : BOOL
+VAR_INPUT
+
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[preparation_timer(IN := NOT THIS^.prepared, PT := T#3S);
+
+THIS^.offset := SEL(preparation_timer.Q, THIS^.offset, (THIS^.offset + input) / 2);
+
+prepare_to_do_the_thing := preparation_timer.Q;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_TheThing">
+      <LineId Id="46" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="1" />
+      <LineId Id="41" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TheThing.do_the_thing">
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TheThing.prepare_to_do_the_thing">
+      <LineId Id="8" Count="0" />
+      <LineId Id="11" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

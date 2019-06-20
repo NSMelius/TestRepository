@@ -50,7 +50,7 @@ END_VAR
 
 THIS^.offset := SEL(preparation_timer.Q, THIS^.offset, (THIS^.offset + input) / 2);
 
-prepare_to_do_the_thing := preparation_timer.Q;]]></ST>
+prepare_to_do_the_thing := NOT preparation_timer.Q;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_TheThing">

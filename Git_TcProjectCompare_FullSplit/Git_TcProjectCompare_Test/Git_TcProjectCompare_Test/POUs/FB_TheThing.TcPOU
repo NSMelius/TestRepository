@@ -36,7 +36,7 @@ END_VAR
       <Implementation>
         <ST><![CDATA[THIS^.output := SEL(THIS^.prepared, 0, input - THIS^.offset);
 
-do_the_thing := THIS^.prepared;]]></ST>
+do_the_thing := NOT THIS^.prepared;]]></ST>
       </Implementation>
     </Method>
     <Method Name="prepare_to_do_the_thing" Id="{c175b9c6-84df-458d-abed-deba4a8f659f}">

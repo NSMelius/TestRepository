@@ -10,12 +10,19 @@ END_VAR
     <Implementation>
       <ST><![CDATA[thething();
 IF theThing.prepare_to_do_the_thing() THEN
-	theThing.do_the_thing();
-END_IF]]></ST>
+	IF theThing.do_the_thing() THEN
+		OtherThing.DoSomething();
+	END_IF
+END_IF
+
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="6" Count="2" />
+      <LineId Id="16" Count="1" />
       <LineId Id="2" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

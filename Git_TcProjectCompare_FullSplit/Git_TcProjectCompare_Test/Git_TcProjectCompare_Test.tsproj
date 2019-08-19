@@ -3,11 +3,15 @@
 	<Project ProjectGUID="{23FADD24-DFA2-4323-9972-ADAE3C26E789}" Target64Bit="true" ShowHideConfigurations="#x306">
 		<System>
 			<Tasks>
+<<<<<<< HEAD
 <<<<<<< .merge_file_a21676
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 =======
 				<Task Id="3" Priority="20" CycleTime="70000" AmsPort="350" AdtTasks="true">
 >>>>>>> .merge_file_a21756
+=======
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+>>>>>>> TestBranch
 					<Name>PlcTask</Name>
 				</Task>
 			</Tasks>
@@ -15,8 +19,5 @@
 		<Plc>
 			<Project File="Git_TcProjectCompare_Test.xti"/>
 		</Plc>
-		<Io>
-			<Device File="Device 1 (EtherCAT Simulation).xti" Id="1"/>
-		</Io>
 	</Project>
 </TcSmProject>

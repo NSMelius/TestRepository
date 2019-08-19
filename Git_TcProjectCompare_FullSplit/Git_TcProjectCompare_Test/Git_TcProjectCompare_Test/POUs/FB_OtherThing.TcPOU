@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="FB_OtherThing" Id="{ab3294b6-c055-49d9-b8f7-44f33997f393}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_OtherThing
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	counter	: INT; 
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[counter := counter + 1]]></ST>
+    </Implementation>
+    <Method Name="DoSomething" Id="{b8c1536c-55ed-4d75-80ed-bc5144d16344}">
+      <Declaration><![CDATA[METHOD DoSomething : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[counter := counter + 1]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_OtherThing">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_OtherThing.DoSomething">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

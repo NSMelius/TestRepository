@@ -3,10 +3,10 @@
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b6843b5c-1737-4223-9ff6-d84596548306}</ProjectGuid>
+    <ProjectGuid>{425465c1-51fc-45dc-ac51-88e6f865ca1c}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>Git_TcProjectCompare_Test</Name>
-    <ProgramVersion>3.1.4022.7</ProgramVersion>
+    <ProgramVersion>3.1.4023.0</ProgramVersion>
     <Application>{f33698ec-6423-455a-bf68-7b7e3129fcd2}</Application>
     <TypeSystem>{50e4d99e-3903-4ba1-a784-c800d2fe9413}</TypeSystem>
     <Implicit_Task_Info>{1c9ea7b1-6681-4c9e-ba28-097ca84eb615}</Implicit_Task_Info>
@@ -16,6 +16,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_OtherThing.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FB_TheThing.TcPOU">

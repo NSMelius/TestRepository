@@ -4,6 +4,7 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	TheThing	: FB_TheThing;
+	OtherThing	: FB_OtherThing;
 END_VAR
 ]]></Declaration>
     <Implementation>
